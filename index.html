@@ -3,15 +3,24 @@
 <head>
 	<title>Presentation</title>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-BS5H5E65XS"></script>
-	<script>	
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168258233-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-		gtag('config', 'G-BS5H5E65XS');
-	</script>
-	
+  gtag('config', 'UA-168258233-1');
+</script>
+
+<script>
+function searchTerm() {
+    var input = document.getElementById("userInput").value;
+	var url = "search/"
+	var res = url.concat(input);
+	window.location.replace(res);
+	alert(res);
+}
+</script>
 </head>
 
 <body>
@@ -23,9 +32,14 @@
 	<a href="pages/two.html">Click here to go to page Two</a><br><br>
 	
 	<!-- Site search !-->
-	<form action="search.html">
+	<form action="search_query.html">
 	<input type = "text" name="q">
-	<input type="submit" value="Search">
+	<input type="submit" value="Search With Query Parameters">
+	</form>
+
+	<form action="/search/" method="get">
+	<input id="userInput" type = "text" name="q">
+	<button onclick="searchTerm()">Search Information with URL</button>
 	</form>
 </body>
 </html>
